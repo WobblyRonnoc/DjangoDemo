@@ -1,5 +1,5 @@
 """
-URL configuration for Demo project.
+URL configuration for DjangoProject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -21,5 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('hello/', include('hello.urls')),
+    path('helloApp/', include('helloApp.urls')),
 ]

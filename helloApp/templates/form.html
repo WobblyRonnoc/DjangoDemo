@@ -8,14 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    {% if name %}
-        <h1>Hello {{ name }}!</h1>
-    {% elif form_submitted %}
-        <h1>Hello {{ input_value }}</h1>
-    {% else %}
-        <h1>Hello World!</h1>
-    {% endif %}
-    <a href="{% url 'index' %}">Back to Home</a>
+ <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
-

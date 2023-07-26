@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 # Create your views here.
-
-def hello_without_template(request):
-    return HttpResponse('Hello, Django! (without template)')
-
-def hello_with_template(request):
-    return render(request, 'hello.html')
+#
+def hello_function(request):
+    name = request.GET.get('name', None)
+    return render(request, 'greet.html', {'name': name})

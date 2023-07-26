@@ -5,12 +5,10 @@
 </head>
 <body>
     <h1>Welcome to the Main Index</h1>
-    
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Article Demo</a></li>
-        <li><a href="">Product Demo</a></li>
-        <!-- Add more links for other demo pages if needed -->
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'hello:greet' %}">Hello</a></li>
+{#        <li><a href="{% url '' %}"></a></li>#}
     </ul>
 </body>
 </html>

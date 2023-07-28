@@ -13,11 +13,12 @@ def hello(request):
 
 def hello_name(request, name=None):
     if request.method == 'POST':
-        # Process the form data and get the value (in this example, just echo it back)
-        name = request.POST.get('name', '')
+        name = request.POST.get('name')
         return render(request, 'greet.html', {'name': name})
-    else:
-        return render(request, 'form.html', {'name': name})
+    elif request.method == 'GET':
+        if not name:
+            name = request.GET.get('name')  # http:// ... /greet/?name=John
+        return render(request, 'greet.html', {'name': name})
 
 
 def get_name(request, name=None):

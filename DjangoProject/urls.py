@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# paths immediatley after the domain name
+# http://localhost:8000/>here<
 urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),

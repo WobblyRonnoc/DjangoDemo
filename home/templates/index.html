@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>My Index Page</title>
+{% extends "base.html" %}
 
-</head>
-<body>
+{% block title %}Home{% endblock %}
+
+{% block content %}
     <h1>{{ header_message }}</h1>
-
+    <br>
     <div>
-        <h2>HttpResponse()</h2>
-        <a href="{% url 'helloApp:simple_response' %}">helloApp:'simple_response'</a>
-        <br>
-        <h2>request data examples</h2>
-        <h3>The view function associated with "/greet" can acquire data multiple ways:</h3>
-        <h3><a href="{% url 'helloApp:greet' %}">helloApp:'greet'</a></h3>
+        <h2>Feature Demos</h2>
+        <span class="text-primary fw-bold">maybe use this to denote where to demo each thing?</span>
         <ul>
-            <li>/greet/ </li>
-            <li>/greet/{Name} </li>
+            <li>URL routing </li>
+            <li>Views</li>
+            <li>Templates</li>
+            <li>Forms</li>
+            <li>Database</li>
         </ul>
-
-        <br>
-        <a href="{% url 'helloApp:form' %}">helloApp:'form'</a>
     </div>
-
-
-
-</body>
-</html>
+{% endblock %}

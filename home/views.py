@@ -6,4 +6,4 @@ from django.http import HttpResponse
 def index(response):
     return render(response, 'index.html', {
         "index": "index",
-        "header_message": "Welcome to the Django Demo"})
+        "header_message": "Welcome to the Home app!"})

@@ -1,25 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% if name %}
-        <h1>Hello {{ name }}!</h1>
-    {% elif form_submitted %}
-        <h1>Hello {{ input_value }}</h1>
-    {% else %}
-        <h1>Hello World!</h1>
-    {% endif %}
+{% extends "base.html" %}
+
+{% block title %}Hello{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>Replace <span class="text-primary">World!</span> with a name:</h3>
+                <h4 class="pt-2">127.0.0.1:8000/home/<span class="text-danger">name</span></h4>
+                <p>or by sending it using a form POST:</p>
+                <a class="btn btn-primary" href="{% url 'helloApp:form' %}">Name Form</a>
+            </div>
+
+            <div class="col-md-6">
+            {% if name %}
+                <h1>Hello <span class="text-primary">{{ name }}</span>!</h1>
+            {% elif form_submitted %}
+                <h1>Hello <span class="text-primary">{{ input_value }}</span></h1>
+            {% else %}
+                <h1>Hello  <span class="text-primary">World</span>!</h1>
+            {% endif %}
+            </div>
+
+        </div>
+    </div>
     <br>
     <hr>
-    <h3>replace world with a name through url</h3>
 
-    <a href="{% url 'index' %}">Back to Home</a>
-</body>
-</html>
-
+{% endblock %}

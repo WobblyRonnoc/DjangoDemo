@@ -40,6 +40,9 @@ def hello_name(request, name=None):
         return render(request, 'greet.html', {'name': name})
 
 
+# handles both GET and POST requests
+# So we can use the same view for both the initial form display and the form submission
+# It will also have the same url path: /form
 def get_name(request, name=None):
     if request.method == 'POST':
         form = MyForm(request.POST)

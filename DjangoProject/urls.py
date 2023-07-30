@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('helloApp/', include('helloApp.urls')),
+    path('moviesApp/', include(('moviesApp.urls', 'moviesApp'), namespace='moviesApp')),
 ]

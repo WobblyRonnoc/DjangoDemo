@@ -14,21 +14,23 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <span class="navbar-text mx-2 text-info fs-4"><a href="{% url 'index' %}">Home</a></span>
-                </li>
-            </ul>
-            <!-- Section for helloApp -->
+                    <!-- Section for helloApp -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <span class="navbar-text mx-2 text-info fs-4">helloApp</span>
+                    <span class="navbar-text mx-2 text-info fs-4 ">helloApp</span>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item m-2">
+                    <a class="btn btn-primary" href="{% url 'helloApp:greet' %}">Greet</a>
+                </li>
+                <li class="nav-item m-2">
                     <a class="btn btn-primary" href="{% url 'helloApp:simple_response' %}">Text Response</a>
                 </li>
-                <li class="nav-item mx-2">
+                <li class="nav-item m-2">
                     <a class="btn btn-primary" href="{% url 'helloApp:simple_json_response' %}">Json Response</a>
                 </li>
-                <li class="nav-item mx-2">
-                    <a class="btn btn-primary" href="{% url 'helloApp:greet' %}">Greet</a>
+
+            </ul>
+
                 </li>
             </ul>
 

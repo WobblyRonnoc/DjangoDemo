@@ -4,32 +4,33 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-7">
+        <div class="row bg-light p-4 border border-primary rounded">
+            <div class="col-md-4">
                 <h3>Replace <span class="text-primary">World</span> with a name:</h3>
-                {% if name %}
-                    <h1>Hello <span class="text-primary">{{ name }}</span>!</h1>
-                {% elif form_submitted %}
-                    <h1>Hello <span class="text-primary">{{ input_value }}</span></h1>
-                {% else %}
-                    <h1>Hello  <span class="text-primary">World</span>!</h1>
-                {% endif %}
-
-
                 <h5 class="pt-2">.../helloApp/greet/<span class="text-primary fs-3">name</span></h5>
                 <p>or by sending it using a form POST:</p>
                 <a class="btn btn-primary" href="{% url 'helloApp:form' %}">Name Form</a>
-
             </div>
 
-            <div class="col-md-5">
+{#             styling removed for readibility:  #}
+{#            {% if name %}#}
+{#                <h1>Hello {{ name }}!</h1>#}
+{#            {% elif form_submitted %}#}
+{#                <h1>Hello {{ input_value }}</h1>#}
+{#            {% else %}#}
+{#                <h1>Hello World!</h1>#}
+{#            {% endif %}#}
 
+            <div class="col-md-auto d-flex align-items-center bg-white border border-dark rounded">
+                {% if name %}
+                    <h1 class="mb-0">Hello <span class="text-primary">{{ name }}</span>!</h1>
+                {% elif form_submitted %}
+                    <h1 class="mb-0">Hello <span class="text-primary">{{ input_value }}</span></h1>
+                {% else %}
+                    <h1 class="mb-0">Hello <span class="text-primary">World</span>!</h1>
+                {% endif %}
             </div>
-
         </div>
     </div>
-    <br>
-    <hr>
-
 {% endblock %}
+

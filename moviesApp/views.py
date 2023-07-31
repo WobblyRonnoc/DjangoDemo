@@ -5,7 +5,7 @@ from .models import Movie
 
 
 def movies(request):
-    return render(request, 'list.html', {'movies': Movie.objects.all()})
+    return render(request, 'movie_list.html', {'movies': Movie.objects.all()})
 
 
 def movie_detail(request, movie_id=None):

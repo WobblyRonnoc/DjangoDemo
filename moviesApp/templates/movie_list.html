@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Movies List{% endblock %}
+
+{% block content %}
+    <div class="bg-light p-4 border border-success rounded">
+        <h1 class="text-success">Movies List</h1>
+         <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Release Date</th>
+                    <th>Director</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.release_date }}</td>
+                    <td>{{ movie.director }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -5,15 +5,16 @@
 {% block content %}
     <h1>{{ header_message }}</h1>
     <br>
-    <div>
+    <div class="bg-light p-4 border border-left border-primary rounded">
         <h2>Feature Demos</h2>
-        <span class="text-primary fw-bold">maybe use this to denote where to demo each thing?</span>
+        <span class="text-danger fw-bold">Topics to cover:</span>
         <ul>
-            <li>URL routing </li>
-            <li>Views</li>
-            <li>Templates</li>
-            <li>Forms</li>
-            <li>Database</li>
+            <li class="text-primary">URL routing</li>
+            <li class="text-primary">Views</li>
+            <li class="text-primary">Templates</li>
+            <li class="text-primary">Forms</li>
+            <li class="text-success">Models/Database</li>
+            <li class="text-success">Admin</li>
         </ul>
     </div>
 {% endblock %}

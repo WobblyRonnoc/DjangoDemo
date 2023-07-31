@@ -3,7 +3,10 @@
 {% block title %}Details{% endblock %}
 {% block content %}
     <div class="bg-light p-4 border border-success rounded">
-        <h1>{{ movies }}</h1>
-        <p> Welcome to the details page!</p>
+        <h1>{{ movie.title }}</h1>
+        <h3>Release Date:</h3><p> {{ movie.release_date }}</p>
+        <h3>Directed By:</h3><p>{{ movie.director }}</p>
+
+        <a class="btn btn-outline-success" href="{% url 'moviesApp:movie_list' %}">Back to List</a>
     </div>
 {% endblock %}

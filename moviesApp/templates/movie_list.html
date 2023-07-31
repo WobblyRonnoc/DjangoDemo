@@ -5,13 +5,14 @@
 {% block content %}
     <div class="bg-light p-4 border border-success rounded">
         <h1 class="text-success">Movies List</h1>
-         <table class="table table-dark table-striped">
+        <table class="table table-dark table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
                     <th>Release Date</th>
                     <th>Director</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,9 @@
                     <td>{{ movie.title }}</td>
                     <td>{{ movie.release_date }}</td>
                     <td>{{ movie.director }}</td>
+                    <td>
+                        <a href="{% url 'moviesApp:movie_detail' movie.id %}" class="btn btn-success btn-sm">Detail</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
